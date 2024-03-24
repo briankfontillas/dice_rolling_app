@@ -26,9 +26,6 @@ function rollDice(params) {
 const SERVER = HTTP.createServer((req, res) => {
   let method = req.method;
   let path = req.url;
-  let origin = `http://localhost${PORT}`;
-  const myURL = new URL(path, origin);
-  const params = myURL.searchParams;
 
   if (path === '/favicon.ico') {
     res.statusCode = 404;
