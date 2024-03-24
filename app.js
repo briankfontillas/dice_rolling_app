@@ -38,12 +38,7 @@ const SERVER = HTTP.createServer((req, res) => {
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    
-    while (count < params.get('rolls')) {
-      let content = dieRoll(1, params.get('sides'));
-      res.write(`${content}\n`);
-      count += 1;
-    }
+    res.write(`${content}\n`);
     res.write(`${method} ${path}\n`);
     res.end();
   }
